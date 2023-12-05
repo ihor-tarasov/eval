@@ -1,0 +1,8 @@
+[package]
+name = "eval_parser"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eval_combs = { path = "../eval_combs" }
+eval_ast = { path = "../eval_ast" }

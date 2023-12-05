@@ -1,0 +1,8 @@
+[package]
+name = "eval_compiler"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eval_ast = { path = "../eval_ast" }
+eval_vm = { path = "../eval_vm" }
