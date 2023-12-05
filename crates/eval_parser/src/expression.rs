@@ -1,12 +1,12 @@
 use eval_ast::{BinaryOperator, Expression};
-use eval_combs::{combinators::*, utils::*, Input, Res};
+use eval_combs::{combinators::*, utils, Input, Res};
 
-pub fn integer() -> impl Fn(Input) -> Res<Expression> {
-    map(digit(10), |d| Expression::Integer(d as i64))
+pub fn integer(radix: u32) -> impl Fn(Input) -> Res<Expression> {
+    map(utils::integer(radix), |d| Expression::Integer(d as i64))
 }
 
 pub fn primary() -> impl Fn(Input) -> Res<Expression> {
-    integer()
+    integer(10)
 }
 
 fn factor_operator() -> impl Fn(Input) -> Res<BinaryOperator> {
